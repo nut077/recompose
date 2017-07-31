@@ -1,0 +1,13 @@
+{
+  "name": "react-router",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nut Freedom",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -k \"npm run --prefix api dev\" \"npm start --prefix client\""
+  },
+  "dependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
