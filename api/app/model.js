@@ -23,7 +23,7 @@ const Model = {
   update(id, attrs) {
     const collection = this.collection();
     const index = this.findIndex(id);
-    const updateRecord = this.withPermittedAttrs(attrs, collection[index])
+    const updateRecord = this.withPermittedAttrs(attrs, collection[index]);
 
     this.setCollection([
       ...collection.slice(0, index),

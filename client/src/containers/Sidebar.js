@@ -22,7 +22,8 @@ class SidebarComponent extends Component {
               <NavLink
                 key={id}
                 to={`/categories/${id}/articles`}
-                className="list-group-item">{title}</NavLink>
+                className="list-group-item"
+              activeClassName="active">{title}</NavLink>
             )
           }
         </nav>

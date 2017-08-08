@@ -4,7 +4,7 @@ const Finder = {
     return Object
       .keys(conditions)
       .reduce((result, key) =>
-        result.filter(item => item[key] === conditions[key])
+        result.filter(item => item[key] == conditions[key])
       , collection);
   },
   findRecord(id) {
