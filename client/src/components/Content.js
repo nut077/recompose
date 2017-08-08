@@ -1,11 +1,15 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import {Home} from './'
+import {Home, Categories} from './'
 import {Sidebar} from "../containers"
+
 const Content = () => (
-  <div>
+  <div className="row">
     <Sidebar/>
-    <Route path="/" component={Home}/>
+    <div className="col-7">
+      <Route path="/" component={Home}/>
+      <Route path="/categories/*" component={Categories}/>
+    </div>
   </div>
 );
 
