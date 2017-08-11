@@ -11,7 +11,8 @@ function logout(push) {
 }
 
 const Header = ({history: {push}}) => {
-  const links = Auth.getToken()?(
+  const token = Auth.getToken();
+  const links = token !== null && typeof token !== 'undefined' && token.length > 9 ? (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
         <a
@@ -20,7 +21,7 @@ const Header = ({history: {push}}) => {
           onClick={logout(push)}>Logout</a>
       </li>
     </ul>
-  ):(
+  ) : (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
         <Link to="/sign-in" className="nav-link">Login</Link>

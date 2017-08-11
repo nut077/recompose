@@ -9,7 +9,10 @@ function getToken() {
 }
 
 function setToken(headers) {
-  Cookies.set('access-token', getTokenFromHeaders(headers));
+  const token = getTokenFromHeaders(headers);
+  if (token !== null) {
+    Cookies.set('access-token', token);
+  }
 }
 
 function removeToken() {
