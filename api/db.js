@@ -179,15 +179,15 @@ export default {
   users: [
     {
       id: 1,
-      email: 'babelcoder@gmail.com',
+      email: 'nut077@hotmail.com',
       isAdmin: true,
-      password: '$2a$12$.rjS5eXZpVo3aC2TuRsV0.8qzBOVPM01zguiMTKwb1BYxIVR7PtQS'
+      password: '$2a$12$pSH/XM9eDztcwlFDltItb.MSv/kVihJgNcRc0h.dfUlj6MZqJBg6m'
     },
     {
       id: 2,
       email: 'somchai@haha.com',
       isAdmin: false,
-      password: '$2a$12$.rjS5eXZpVo3aC2TuRsV0.8qzBOVPM01zguiMTKwb1BYxIVR7PtQS'
+      password: '$2a$12$pSH/XM9eDztcwlFDltItb.MSv/kVihJgNcRc0h.dfUlj6MZqJBg6m'
     }
   ]
 }

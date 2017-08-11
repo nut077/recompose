@@ -15,7 +15,7 @@ class SigninContainer extends Component {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'applicantion/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(credential)
     })

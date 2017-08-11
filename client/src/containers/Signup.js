@@ -14,8 +14,8 @@ class SignupContainer extends Component {
     fetch('/users', {
       method: 'POST',
       headers: {
-        'Accept': 'applicantion/json',
-        'Content-Type': 'applicantion/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(credential)
     })

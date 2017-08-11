@@ -26,7 +26,7 @@ const Users = {
       })
     })
   },
-  getToken(user) {
+  genToken(user) {
     return jwt.sign(
       {sub: user.id},
       config.secretKey,

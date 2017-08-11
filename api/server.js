@@ -24,7 +24,7 @@ export function setup() {
   const app = express();
   const PORT = config.port;
 
-  //app.use(auth);
+  app.use(auth);
   app.use(cors());
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());

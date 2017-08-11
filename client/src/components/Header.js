@@ -15,7 +15,7 @@ const Header = ({history: {push}}) => {
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
         <a
-          href="#"
+          role="button"
           className="nav-link"
           onClick={logout(push)}>Logout</a>
       </li>
