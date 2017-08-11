@@ -3,3 +3,5 @@ export {default as Home} from './Home';
 export {default as Content} from './Content';
 export {default as Categories} from './Categories';
 export {default as Articles} from './Articles';
+export {default as Header} from './Header';
+export {default as AuthForm} from './AuthForm';

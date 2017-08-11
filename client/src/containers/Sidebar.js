@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 
-class SidebarComponent extends Component {
+class SidebarContainer extends Component {
 
   state = {
     categories: []
@@ -32,4 +32,4 @@ class SidebarComponent extends Component {
   }
 }
 
-export default SidebarComponent;
+export default SidebarContainer;
