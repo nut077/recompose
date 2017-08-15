@@ -1,6 +1,20 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {numericString} from 'airbnb-prop-types';
 
 class ArticleContainer extends Component {
+
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: numericString().isRequired
+      }).isRequired
+    }).isRequired,
+    history: PropTypes.shape({
+      goBack: PropTypes.func.isRequired
+    }).isRequired
+  };
+
   state = {
     title: '',
     content: ''
