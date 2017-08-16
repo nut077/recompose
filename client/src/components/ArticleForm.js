@@ -26,6 +26,7 @@ class ArticleForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
+    this.setState({isDirty: false});
     this.props.onSubmit(this.state);
   };
 
