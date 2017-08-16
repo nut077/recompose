@@ -3,13 +3,14 @@ import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {numericString} from 'airbnb-prop-types';
+import {Auth} from '../lib'
 
 class ArticlesContainer extends Component {
 
   static propTypes = {
     match: PropTypes.shape({
       params: PropTypes.shape({
-        categoryId: numericString.isRequired
+        categoryId: numericString().isRequired
       }).isRequired
     }).isRequired,
     location: PropTypes.shape({
@@ -51,6 +52,15 @@ class ArticlesContainer extends Component {
 
     return (
       <div>
+        {
+          Auth.getToken() && (
+            <Link
+              to={`/categories/${categoryId}/articles/new`}
+              className="btn btn-sm btn-secondary">
+              Create Article
+            </Link>
+          )
+        }
         <ul className="nav flex-column">
           {
             articles.map(({id, title}) =>
@@ -71,8 +81,8 @@ class ArticlesContainer extends Component {
                   key={currentIndex}
                   className={classNames(['page-item', {active: currentIndex === +page}])}>
                   <Link
-                  to={`/categories/${categoryId}/articles?page=${currentIndex}`}
-                  className="page-link">{currentIndex}</Link>
+                    to={`/categories/${categoryId}/articles?page=${currentIndex}`}
+                    className="page-link">{currentIndex}</Link>
                 </li>
               )
             })

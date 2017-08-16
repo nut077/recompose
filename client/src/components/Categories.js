@@ -1,13 +1,16 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import {Articles} from "../containers";
+import {Route, Switch} from 'react-router-dom';
+import {Articles, NewArticle} from "../containers";
 
 const Categories = () => (
-  <div>
+  <Switch>
+    <Route
+      path="/categories/:categoryId/articles/new"
+      component={NewArticle}/>
     <Route
       path="/categories/:categoryId/articles"
       component={Articles}/>
-  </div>
+  </Switch>
 );
 
 export default Categories;

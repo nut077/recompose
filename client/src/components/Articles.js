@@ -1,11 +1,12 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import {Article} from "../containers";
+import {Route, Switch} from 'react-router-dom';
+import {Article, EditArticle} from "../containers";
 
 const Articles = () => (
-  <div>
-    <Route path="/articles/:id" component={Article}/>
-  </div>
+  <Switch>
+    <Route exact path="/articles/:id" component={Article}/>
+    <Route path="/articles/:id/edit" component={EditArticle}/>
+  </Switch>
 );
 
 export default Articles;

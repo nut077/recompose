@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {numericString} from 'airbnb-prop-types';
+import {Auth} from '../lib';
+import {Link} from "react-router-dom";
 
 class ArticleContainer extends Component {
 
@@ -37,12 +39,26 @@ class ArticleContainer extends Component {
   };
 
   render() {
+    const {id} = this.props.match.params;
     const {title, content} = this.state;
     return (
       <div>
         <h2>{title}</h2>
         <p>{content}</p>
-        <button className="btn btn-primary btn-sm" onClick={this.backToPreviousUrl}>Back</button>
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={this.backToPreviousUrl}>
+          Back
+        </button>
+        {
+          Auth.getToken() && (
+            <Link
+              to={`/articles/${id}/edit`}
+              className="btn btn-sm btn-secondary">
+              Edit
+            </Link>
+          )
+        }
       </div>
     )
   }
