@@ -6,10 +6,10 @@ import {Signin, Signup} from '../containers';
 const App = () => (
   <div>
     <Header/>
-    <div className="container">
+    <div className='container'>
       <Switch>
-        <Route path="/sign-in" component={Signin}/>
-        <Route path="/sign-up" component={Signup}/>
+        <Route path='/sign-in' component={Signin}/>
+        <Route path='/sign-up' component={Signup}/>
         <Route component={Content}/>
       </Switch>
     </div>
