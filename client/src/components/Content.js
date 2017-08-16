@@ -9,10 +9,9 @@ const Content = () => (
     <div className='col-7'>
       <Switch>
         <Route exact path='/' component={Home}/> {/*exact คือการบอกว่า url ต้องตรงกันเท่านั้น*/}
-        <Route path='/categories/*' component={Categories}/>
+        <Route path='/categories' component={Categories}/>
         <Route path='/articles' component={Articles}/>
         <Route component={NotFound}/>
-        <Route/>
       </Switch>
     </div>
   </div>
