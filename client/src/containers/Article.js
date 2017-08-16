@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {numericString} from 'airbnb-prop-types';
 import {Auth} from '../lib';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 class ArticleContainer extends Component {
 
@@ -46,7 +46,7 @@ class ArticleContainer extends Component {
         <h2>{title}</h2>
         <p>{content}</p>
         <button
-          className="btn btn-primary btn-sm"
+          className='btn btn-primary btn-sm'
           onClick={this.backToPreviousUrl}>
           Back
         </button>
@@ -54,7 +54,7 @@ class ArticleContainer extends Component {
           Auth.getToken() && (
             <Link
               to={`/articles/${id}/edit`}
-              className="btn btn-sm btn-secondary">
+              className='btn btn-sm btn-secondary'>
               Edit
             </Link>
           )

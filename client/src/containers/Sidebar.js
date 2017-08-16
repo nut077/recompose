@@ -15,15 +15,15 @@ class SidebarContainer extends Component {
 
   render() {
     return (
-      <div className="col-5">
-        <nav className="list-group">
+      <div className='col-5'>
+        <nav className='list-group'>
           {
             this.state.categories.map(({id, title}) =>
               <NavLink
                 key={id}
                 to={`/categories/${id}/articles`}
-                className="list-group-item"
-              activeClassName="active">{title}</NavLink>
+                className='list-group-item'
+              activeClassName='active'>{title}</NavLink>
             )
           }
         </nav>

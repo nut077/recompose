@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Prompt} from "react-router-dom";
+import {Prompt} from 'react-router-dom';
 
 class ArticleForm extends Component {
   state = {
@@ -42,37 +42,37 @@ class ArticleForm extends Component {
       <form>
         <Prompt
           when={isDirty}
-          message="Are you sure you want to leave this page?"
+          message='Are you sure you want to leave this page?'
         />
-        <h2 className="text-center">{formType} Article Form</h2>
+        <h2 className='text-center'>{formType} Article Form</h2>
         <hr/>
-        <div className="form-group">
-          <label htmlFor="title">Title</label>
+        <div className='form-group'>
+          <label htmlFor='title'>Title</label>
           <input
-            type="text"
-            className="form-control"
-            id="title"
-            name="title"
-            placeholder="Enter title"
+            type='text'
+            className='form-control'
+            id='title'
+            name='title'
+            placeholder='Enter title'
             value={title}
             onChange={this.onFieldChange}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="content">Content</label>
+        <div className='form-group'>
+          <label htmlFor='content'>Content</label>
           <textarea
             rows={5}
-            className="form-control"
-            id="content"
-            name="content"
-            placeholder="Enter content"
+            className='form-control'
+            id='content'
+            name='content'
+            placeholder='Enter content'
             value={content}
             onChange={this.onFieldChange}
           />
         </div>
         <button
-          type="submit"
-          className="btn btn-primary"
+          type='submit'
+          className='btn btn-primary'
           onClick={this.onSubmit}>{formType}</button>
       </form>
     )

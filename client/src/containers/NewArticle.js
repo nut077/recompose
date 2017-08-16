@@ -33,7 +33,7 @@ class NewArticleContainer extends Component {
   render() {
     return (
       <ArticleForm
-        formType="Create"
+        formType='Create'
         onSubmit={this.createArticle}
       />
     )

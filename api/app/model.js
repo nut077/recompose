@@ -1,6 +1,6 @@
 import db from '../db';
-import Finder from "./finder";
-import Pagination from "./pagination";
+import Finder from './finder';
+import Pagination from './pagination';
 
 const Model = {
   ...Finder,

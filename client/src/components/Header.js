@@ -13,26 +13,26 @@ function logout(push) {
 const Header = ({history: {push}}) => {
   const token = Auth.getToken();
   const links = token !== null && typeof token !== 'undefined' && token.length > 9 ? (
-    <ul className="navbar-nav ml-auto">
-      <li className="nav-item">
+    <ul className='navbar-nav ml-auto'>
+      <li className='nav-item'>
         <a
-          role="button"
-          className="nav-link"
+          role='button'
+          className='nav-link'
           onClick={logout(push)}>Logout</a>
       </li>
     </ul>
   ) : (
-    <ul className="navbar-nav ml-auto">
-      <li className="nav-item">
-        <Link to="/sign-in" className="nav-link">Login</Link>
+    <ul className='navbar-nav ml-auto'>
+      <li className='nav-item'>
+        <Link to='/sign-in' className='nav-link'>Login</Link>
       </li>
-      <li className="nav-item">
-        <Link to="/sign-up" className="nav-link">Register</Link>
+      <li className='nav-item'>
+        <Link to='/sign-up' className='nav-link'>Register</Link>
       </li>
     </ul>
   );
   return (
-    <nav className="navbar navbar-toggleable-md navbar-light bg-faded mb-3">
+    <nav className='navbar navbar-toggleable-md navbar-light bg-faded mb-3'>
       {links}
     </nav>
   )

@@ -26,33 +26,33 @@ class AuthForm extends Component {
     const {formName} = this.props;
     return (
       <form>
-        <h2 className="text-center">{formName} Form</h2>
+        <h2 className='text-center'>{formName} Form</h2>
         <hr/>
-        <div className="form-group">
-          <label htmlFor="email">Email address</label>
+        <div className='form-group'>
+          <label htmlFor='email'>Email address</label>
           <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            placeholder="Enter email"
+            type='email'
+            className='form-control'
+            id='email'
+            name='email'
+            placeholder='Enter email'
             onChange={this.onFieldChange}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
+        <div className='form-group'>
+          <label htmlFor='password'>Password</label>
           <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            placeholder="Enter password"
+            type='password'
+            className='form-control'
+            id='password'
+            name='password'
+            placeholder='Enter password'
             onChange={this.onFieldChange}
           />
         </div>
         <button
-          type="submit"
-          className="btn btn-primary"
+          type='submit'
+          className='btn btn-primary'
           onClick={this.onSubmit}>
           {formName}
         </button>

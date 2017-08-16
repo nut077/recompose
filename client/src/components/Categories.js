@@ -1,17 +1,17 @@
 import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {Articles, NewArticle} from "../containers";
+import {Articles, NewArticle} from '../containers';
 
 const Categories = () => (
   <Switch>
     <Route
-      path="/categories/:categoryId/articles/new"
+      path='/categories/:categoryId/articles/new'
       component={NewArticle}/>
     <Route
-      path="/categories/:categoryId/articles"
+      path='/categories/:categoryId/articles'
       component={Articles}/>
     <Route
-      path="/categories/:categoryId"
+      path='/categories/:categoryId'
       render={({match: {params: {categoryId}}}) => (
         <Redirect
           to={`/categories/${categoryId}/articles`}/>

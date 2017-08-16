@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import config from '../../config';
-import Model from "../model";
+import Model from '../model';
 
 const Users = {
   ...Model,

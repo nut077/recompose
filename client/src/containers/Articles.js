@@ -56,22 +56,22 @@ class ArticlesContainer extends Component {
           Auth.getToken() && (
             <Link
               to={`/categories/${categoryId}/articles/new`}
-              className="btn btn-sm btn-secondary">
+              className='btn btn-sm btn-secondary'>
               Create Article
             </Link>
           )
         }
-        <ul className="nav flex-column">
+        <ul className='nav flex-column'>
           {
             articles.map(({id, title}) =>
               <Link
                 key={id}
                 to={`/articles/${id}`}
-                className="nav-link">{title}</Link>
+                className='nav-link'>{title}</Link>
             )
           }
         </ul>
-        <nav className="pagination">
+        <nav className='pagination'>
           {
             Array.from({length: totalPages}).map((_, index) => {
               const currentIndex = index + 1;
@@ -82,7 +82,7 @@ class ArticlesContainer extends Component {
                   className={classNames(['page-item', {active: currentIndex === +page}])}>
                   <Link
                     to={`/categories/${categoryId}/articles?page=${currentIndex}`}
-                    className="page-link">{currentIndex}</Link>
+                    className='page-link'>{currentIndex}</Link>
                 </li>
               )
             })

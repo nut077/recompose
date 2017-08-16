@@ -49,7 +49,7 @@ class EditArticleContainer extends Component {
     return (
       <ArticleForm
         {...this.state}
-        formType="Edit"
+        formType='Edit'
         onSubmit={this.editArticle}
       />
     )

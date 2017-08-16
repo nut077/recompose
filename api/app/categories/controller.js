@@ -1,4 +1,4 @@
-import Categories from "./model";
+import Categories from './model';
 
 const CategoriesController = {
   getAll(req, res) {
