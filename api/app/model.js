@@ -16,7 +16,7 @@ const Model = {
   },
   create(attrs) {
     const collection = this.collection();
-    const record = this.withPermittedAttrs(attrs, {id: collection.length + 1});
+    const record = this.withPermittedAttrs(attrs, {id: collection.length + 1});;
     this.setCollection([...collection, record]);
     return record;
   },

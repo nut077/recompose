@@ -1,35 +1,37 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {
+  compose,
+  withState,
+  lifecycle
+} from 'recompose';
 
-class SidebarContainer extends Component {
+const SidebarContainer = ({
+  categories
+}) => (
+  <div className='col-5'>
+    <nav className='list-group'>
+      {
+        categories.map(({id, title}) =>
+          <NavLink
+            key={id}
+            to={`/categories/${id}/articles`}
+            className='list-group-item'
+            activeClassName='active'>{title}</NavLink>
+        )
+      }
+    </nav>
+  </div>
+);
 
-  state = {
-    categories: []
-  };
+export default compose(
+  withState('categories', 'setCategories', []),
+  lifecycle({
+    componentDidMount() {
+      fetch('/categories')
+        .then(res => res.json())
+        .then(({categories}) => this.props.setCategories(categories))
+    }
+  })
+)(SidebarContainer);
 
-  componentDidMount() {
-    fetch('/categories')
-      .then(res => res.json())
-      .then(({categories}) => this.setState({categories}))
-  }
-
-  render() {
-    return (
-      <div className='col-5'>
-        <nav className='list-group'>
-          {
-            this.state.categories.map(({id, title}) =>
-              <NavLink
-                key={id}
-                to={`/categories/${id}/articles`}
-                className='list-group-item'
-              activeClassName='active'>{title}</NavLink>
-            )
-          }
-        </nav>
-      </div>
-    )
-  }
-}
-
-export default SidebarContainer;

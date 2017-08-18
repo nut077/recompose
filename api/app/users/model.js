@@ -17,6 +17,7 @@ const Users = {
         const collection = this.collection();
         const user = {
           id: collection.length + 1,
+          authorId: collection.length + 1,
           email,
           password: hash,
           isAdmin: false
