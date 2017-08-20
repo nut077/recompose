@@ -34,4 +34,4 @@ const SessionsController = {
   }
 };
 
-export default SessionsController;
+export default SessionsController

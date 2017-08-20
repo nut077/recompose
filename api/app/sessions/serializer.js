@@ -10,4 +10,4 @@ const SessionsSerializer = {
   }
 };
 
-export default SessionsSerializer;
+export default SessionsSerializer

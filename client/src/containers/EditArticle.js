@@ -1,13 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {numericString} from 'airbnb-prop-types';
-import {Auth} from '../lib';
-import {ArticleForm} from '../components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import {numericString} from 'airbnb-prop-types'
+import {withAuth, withAuthCheck} from '../lib'
+import {ArticleForm} from '../components'
 import {
   compose,
   setPropTypes,
   withState,
+  withProps,
   withHandlers,
+  flattenProp,
+  onlyUpdateForKeys,
   lifecycle
 } from 'recompose';
 
@@ -34,7 +37,11 @@ export default compose(
       push: PropTypes.func.isRequired
     }).isRequired
   }),
+  withAuth,
+  withAuthCheck,
+  flattenProp('auth'),
   withState('article', 'setArticle', {title: '', content: ''}),
+  withProps(props => ({accessToken: props.auth.getToken()})),
   withHandlers({
     loadArticle:
       ({
@@ -48,14 +55,15 @@ export default compose(
     editArticle:
       ({
          match: {params: {id}},
-         history: {push}
+         history: {push},
+         accessToken
        }) => article => {
         fetch(`/articles/${id}`, {
           method: 'PATCH',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': Auth.getToken()
+            'Authorization': accessToken
           },
           body: JSON.stringify({
             ...article
@@ -70,5 +78,6 @@ export default compose(
     componentDidMount() {
       this.props.loadArticle();
     }
-  })
-)(EditArticleContainer);
+  }),
+  onlyUpdateForKeys(['accessToken', 'article'])
+)(EditArticleContainer)

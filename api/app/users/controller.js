@@ -1,5 +1,5 @@
-import Users from './model';
-import UsersSerializer from './serializer';
+import Users from './model'
+import UsersSerializer from './serializer'
 
 const UsersController = {
   getAll(req, res) {
@@ -26,4 +26,4 @@ const UsersController = {
   }
 };
 
-export default UsersController;
+export default UsersController

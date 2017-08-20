@@ -1,6 +1,6 @@
-import db from '../db';
-import Finder from './finder';
-import Pagination from './pagination';
+import db from '../db'
+import Finder from './finder'
+import Pagination from './pagination'
 
 const Model = {
   ...Finder,
@@ -53,4 +53,4 @@ const Model = {
   }
 };
 
-export default Model;
+export default Model

@@ -1,4 +1,4 @@
-import Policy from '../policy';
+import Policy from '../policy'
 const ArticlesPolicy = {
   ...Policy,
   create(user) {
@@ -12,4 +12,4 @@ const ArticlesPolicy = {
   }
 };
 
-export default ArticlesPolicy;
+export default ArticlesPolicy

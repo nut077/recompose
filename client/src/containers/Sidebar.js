@@ -1,5 +1,5 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
+import React from 'react'
+import {NavLink} from 'react-router-dom'
 import {
   compose,
   withState,
@@ -33,5 +33,5 @@ export default compose(
         .then(({categories}) => this.props.setCategories(categories))
     }
   })
-)(SidebarContainer);
+)(SidebarContainer)
 

@@ -1,27 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Link, withRouter} from 'react-router-dom';
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Link, withRouter} from 'react-router-dom'
 import {Auth} from '../lib'
+import {
+  compose,
+  setPropTypes,
+  withHandlers,
+  branch,
+  renderComponent
+} from 'recompose';
 
-function logout(push) {
-  return () => {
-    Auth.removeToken();
-    push('/');
-  }
-}
+const Nav = ({children}) => (
+  <nav className='navbar navbar-toggleable-md navbar-light bg-faded mb-3'>
+    {children}
+  </nav>
+);
 
-const Header = ({history: {push}}) => {
-  const token = Auth.getToken();
-  const links = token !== null && typeof token !== 'undefined' && token.length > 9 ? (
+const UserMenu = ({logout}) => (
+  <Nav>
     <ul className='navbar-nav ml-auto'>
       <li className='nav-item'>
         <a
           role='button'
           className='nav-link'
-          onClick={logout(push)}>Logout</a>
+          onClick={logout}>Logout</a>
       </li>
     </ul>
-  ) : (
+  </Nav>
+);
+
+const GuestMenu = () => (
+  <Nav>
     <ul className='navbar-nav ml-auto'>
       <li className='nav-item'>
         <Link to='/sign-in' className='nav-link'>Login</Link>
@@ -30,18 +39,25 @@ const Header = ({history: {push}}) => {
         <Link to='/sign-up' className='nav-link'>Register</Link>
       </li>
     </ul>
-  );
-  return (
-    <nav className='navbar navbar-toggleable-md navbar-light bg-faded mb-3'>
-      {links}
-    </nav>
+  </Nav>
+);
+
+export default compose(
+  withRouter,
+  setPropTypes({
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired
+    }).isRequired
+  }),
+  withHandlers({
+    logout: ({history: {push}}) => _ => {
+      Auth.removeToken();
+      push('/');
+    }
+  }),
+  branch(
+    _ => Auth.getToken(),
+    renderComponent(UserMenu),
+    renderComponent(GuestMenu)
   )
-};
-
-Header.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired
-  }).isRequired
-};
-
-export default withRouter(Header);
+)()

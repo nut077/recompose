@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {Auth} from '../lib';
-import {AuthForm} from '../components';
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import {Auth} from '../lib'
+import {AuthForm} from '../components'
 
 class SignupContainer extends Component {
   static propTypes = {
@@ -33,4 +33,4 @@ class SignupContainer extends Component {
   }
 }
 
-export default SignupContainer;
+export default SignupContainer

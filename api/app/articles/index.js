@@ -1,1 +1,1 @@
-export {default as Articles} from './model';
+export {default as Articles} from './model'

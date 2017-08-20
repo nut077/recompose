@@ -1,6 +1,6 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import {Article, EditArticle} from '../containers';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import {Article, EditArticle} from '../containers'
 
 const Articles = () => (
   <Switch>
@@ -9,4 +9,4 @@ const Articles = () => (
   </Switch>
 );
 
-export default Articles;
+export default Articles

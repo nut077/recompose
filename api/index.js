@@ -1,2 +1,2 @@
-import {setup} from './server';
+import {setup} from './server'
 setup();

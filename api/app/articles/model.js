@@ -1,4 +1,4 @@
-import Model from '../model';
+import Model from '../model'
 
 const Articles = {
   ...Model,
@@ -6,4 +6,4 @@ const Articles = {
   permittedAttrs: ['title', 'content', 'authorId', 'categoryId']
 };
 
-export default Articles;
+export default Articles

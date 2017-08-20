@@ -1,4 +1,4 @@
-import Serializer from '../serializer';
+import Serializer from '../serializer'
 
 const UsersSerializer = {
   ...Serializer,
@@ -17,4 +17,4 @@ const UsersSerializer = {
   }
 };
 
-export default UsersSerializer;
+export default UsersSerializer

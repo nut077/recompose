@@ -1,5 +1,5 @@
-import Articles from './model';
-import ArticlesPolicy from './policy';
+import Articles from './model'
+import ArticlesPolicy from './policy'
 
 const ArticlesController = {
   getAll(req, res) {
@@ -57,4 +57,4 @@ const ArticlesController = {
   }
 };
 
-export default ArticlesController;
+export default ArticlesController

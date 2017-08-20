@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
   compose,
   setPropTypes,
   withState,
-  withHandlers
+  withHandlers,
+  pure
 } from 'recompose';
 
 const AuthForm = ({formName, onFieldChange, onSubmit}) => (
@@ -56,5 +57,6 @@ export default compose(
     onFieldChange: ({setFormValues, formValues}) => ({target: {name, value}}) => {
       setFormValues({...formValues, [name]: value});
     }
-  })
-)(AuthForm);
+  }),
+  pure
+)(AuthForm)

@@ -15,4 +15,4 @@ const Finder = {
   }
 };
 
-export default Finder;
+export default Finder

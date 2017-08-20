@@ -1,6 +1,6 @@
-import React from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
-import {Articles, NewArticle} from '../containers';
+import React from 'react'
+import {Route, Switch, Redirect} from 'react-router-dom'
+import {Articles, NewArticle} from '../containers'
 
 const Categories = () => (
   <Switch>
@@ -19,4 +19,4 @@ const Categories = () => (
   </Switch>
 );
 
-export default Categories;
+export default Categories

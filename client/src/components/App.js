@@ -1,7 +1,7 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import {Content, Header} from './';
-import {Signin, Signup} from '../containers';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import {Content, Header} from './'
+import {Signin, Signup} from '../containers'
 
 const App = () => (
   <div>
@@ -16,4 +16,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default App

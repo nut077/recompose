@@ -1,8 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import {numericString} from 'airbnb-prop-types';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import {numericString} from 'airbnb-prop-types'
 import {Auth} from '../lib'
 import {
   compose,
@@ -95,5 +95,4 @@ export default compose(
       }
     }
   })
-)(ArticlesContainer);
-
+)(ArticlesContainer)
